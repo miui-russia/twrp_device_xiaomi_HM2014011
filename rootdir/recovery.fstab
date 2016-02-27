@@ -1,10 +1,12 @@
-/dev/misc		/misc		emmc	defaults defaults
-/dev/block/mmcblk0p7	/data		ext4	noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,noauto_da_alloc,errors=panic wait,check,encryptable=/dev/block/platform/msm_sdcc.1/by-name/metadata
-/dev/block/mmcblk0p5	/system		ext4	ro,barrier=1                                                    wait
-/dev/block/mmcblk0p6	/cache		ext4	noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,noauto_da_alloc,errors=panic wait,check
-/dev/bootimg		/boot		emmc	defaults defaults
-/dev/recovery		/recovery	emmc	defaults defaults
-/dev/block/mmcblk0p8	/emmc		vfat	defaults defaults
-/dev/block/mmcblk1	/sdcard		vfat	defaults defaults
-/dev/block/mmcblk1p1	/sdcard		vfat	defaults defaults
-/dev/block/mmcblk1p2	/sd-ext		auto	defaults defaults
+# mount          point	    fstype		              device					device2
+/misc	           emmc       /dev/misc		          	defaults defaults
+/data		         ext4       /dev/block/mmcblk0p7	  noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,noauto_da_alloc,errors=panic wait,check,encryptable=/dev/block/platform/msm_sdcc.1/by-name/metadata
+/system		       ext4       /dev/block/mmcblk0p5		ro,barrier=1                                                    wait
+/cache	         ext4       /dev/block/mmcblk0p6		noatime,nosuid,nodev,barrier=1,data=ordered,nomblk_io_submit,noauto_da_alloc,errors=panic wait,check
+/boot		         emmc       /dev/bootimg		      	defaults defaults
+/recovery	       emmc       /dev/recovery		      	defaults defaults
+/emmc		         vfat       /dev/block/mmcblk0p8	  defaults defaults
+/sdcard		       vfat       /dev/block/mmcblk1		  defaults defaults
+/sdcard	         vfat       /dev/block/mmcblk1p1	  defaults defaults
+/sd-ext		       auto       /dev/block/mmcblk1p2		defaults defaults
+/usb-otg         vfat       /dev/block/sda1         /dev/block/sda       flags=display="USB-OTG";storage;wipeingui;removable
